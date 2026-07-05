@@ -1,0 +1,9 @@
+customtkinter
+langchain
+langchain-community
+langchain-ollama
+langchain-huggingface
+faiss-cpu
+pypdf
+packaging
+sentence-transformers
