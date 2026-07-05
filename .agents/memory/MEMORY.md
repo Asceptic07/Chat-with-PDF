@@ -1,0 +1,1 @@
+- [Chat-with-PDF Ollama local-only](chat-with-pdf-ollama.md) — RAG logic requires local Ollama; app is meant to run outside Replit, not inside it.

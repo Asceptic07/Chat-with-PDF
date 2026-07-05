@@ -1,9 +1,12 @@
-customtkinter
+fastapi
+uvicorn[standard]
+python-multipart
+jinja2
 langchain
 langchain-community
 langchain-ollama
 langchain-huggingface
+langchain-classic
 faiss-cpu
 pypdf
-packaging
 sentence-transformers

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>:: RAG DOCUMENT TERMINAL ::</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="crt-overlay"></div>
+  <div class="scanline"></div>
+
+  <div class="terminal-shell">
+    <header class="title-bar">
+      <span class="title-bar-dot"></span>
+      <span class="title-bar-dot"></span>
+      <span class="title-bar-dot"></span>
+      <h1>RAG DOCUMENT AI — LOCAL TERMINAL v1.0</h1>
+    </header>
+
+    <div class="terminal-body">
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <p class="ascii-label">&gt; NEW SESSION</p>
+          <label class="upload-btn" for="pdf-input">
+            [ + UPLOAD PDF ]
+          </label>
+          <input type="file" id="pdf-input" accept="application/pdf" hidden />
+          <div id="progress-wrap" class="progress-wrap hidden">
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+            <p id="progress-label" class="blink-text">PROCESSING...</p>
+          </div>
+          <p id="status-line" class="status-line">STATUS: READY</p>
+        </div>
+
+        <div class="divider">////////////////////////</div>
+
+        <div class="sidebar-section history-section">
+          <p class="ascii-label">&gt; PAST SESSIONS</p>
+          <div id="history-list" class="history-list"></div>
+        </div>
+      </aside>
+
+      <main class="chat-panel">
+        <div id="chat-display" class="chat-display">
+          <div class="msg system">
+            <div class="bubble">
+              WELCOME OPERATOR.<br />
+              Upload a PDF document to begin analysis. This terminal connects to a local Ollama
+              instance running on your machine — no data leaves your computer.
+            </div>
+          </div>
+        </div>
+
+        <form id="chat-form" class="input-row">
+          <span class="prompt-caret">&gt;</span>
+          <input
+            id="chat-input"
+            type="text"
+            autocomplete="off"
+            placeholder="Ask a question about the document..."
+          />
+          <button id="send-btn" type="submit">SEND</button>
+        </form>
+      </main>
+    </div>
+
+    <footer class="status-bar">
+      <span id="footer-session">NO ACTIVE SESSION</span>
+      <span class="footer-right">OLLAMA :: LOCAL // FASTAPI :: ONLINE</span>
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
